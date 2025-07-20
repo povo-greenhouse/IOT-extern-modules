@@ -2,8 +2,8 @@ import serial
 import time
 import threading
 
-# Imposta qui la tua porta seriale e baudrate!
-SERIAL_PORT = 'COM11'     # Sostituisci con la porta corretta, es: /dev/ttyACM0 su Linux
+
+SERIAL_PORT = 'COM11'     
 BAUDRATE = 115200
 
 def read_from_serial(ser):
