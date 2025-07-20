@@ -96,7 +96,7 @@ custom_squares_widgets = {}
 def add_square_to_custom_frame(label_text):
     """Aggiungi un quadrato con label personalizzata al frame custom."""
     if label_text in custom_squares_widgets:
-        return  # Evita duplicati
+        return 
     frame = tk.Frame(custom_squares_frame, width=80, height=80, bg="#369955", bd=2, relief="ridge")
     frame.pack(side="left", padx=8, pady=8)
     frame.pack_propagate(False)
@@ -109,25 +109,6 @@ def remove_square_from_custom_frame(label_text):
     if label_text in custom_squares_widgets:
         frame = custom_squares_widgets.pop(label_text)
         frame.destroy()
-
-# # --------- Esempio di uso: bottoni di test per aggiungere/rimuovere quadrati
-# def test_add():
-#     from random import randint
-#     # Demo: label random
-#     label = f"Test {randint(1,99)}"
-#     add_square_to_custom_frame(label)
-
-# def test_remove():
-#     # Rimuovi il primo quadrato che trovi
-#     if custom_squares_widgets:
-#         label = next(iter(custom_squares_widgets))
-#         remove_square_from_custom_frame(label)
-
-# Bottoni di test (puoi rimuoverli dopo)
-# test_btn_frame = tk.Frame(root, bg="#18432a")
-# test_btn_frame.place(relx=0.01, rely=0.92, anchor="sw")
-# tk.Button(test_btn_frame, text="Aggiungi", command=test_add, bg="#3ad176", fg="#fff", font=("Helvetica", 10, "bold")).pack(side="left", padx=5)
-# tk.Button(test_btn_frame, text="Rimuovi", command=test_remove, bg="#f05353", fg="#fff", font=("Helvetica", 10, "bold")).pack(side="left", padx=5)
 
 # --------------------- CALLBACKS USATE DA UDP ------------------------
 def set_square_state(index, state):
@@ -143,7 +124,7 @@ def log_message(msg):
     log_text.config(state='disabled')
 
 def update_square_from_udp(idx, state):
-    # Qui puoi fare root.after(0, ...) se vuoi essere thread-safe!
+
     root.after(0, lambda: set_square_state(idx, state))
 
 def add_task_udp(msg):
